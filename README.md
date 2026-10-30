@@ -1,5 +1,9 @@
 # Vocalise VS Code Extension
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues/YOUR_USERNAME/vocalise-vscode)](https://github.com/YOUR_USERNAME/vocalise-vscode/issues)
+[![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/vocalise-vscode)](https://github.com/YOUR_USERNAME/vocalise-vscode)
+
 Text-to-speech extension for VS Code using native system TTS.
 
 ## Features
@@ -110,51 +114,48 @@ This will create a `vocalise-vscode-0.1.0.vsix` file that can be installed.
 - [ ] Reading history
 - [ ] Improved voice quality with external TTS libraries
 
-## Configuration
+## Contributing
 
-Open VS Code settings and search for "Vocalise":
+Contributions are welcome! This project is open source and we encourage contributions from the community.
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `vocalise.voiceName` | (empty) | Name of the voice to use |
-| `vocalise.rate` | 1.0 | Speech rate (0.5 = slow, 1.0 = normal, 2.0 = fast) |
-| `vocalise.language` | auto | Language for speech synthesis |
-| `vocalise.highlightText` | true | Highlight the currently spoken word |
-| `vocalise.autoDetectLanguage` | true | Automatically detect language from text |
+### How to Contribute
 
-## Development
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Build
+### Development Setup
+
 ```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/vocalise-vscode.git
+cd vocalise-vscode
+
+# Install dependencies
 npm install
-npm run compile
-```
 
-### Watch Mode
-```bash
+# Watch for changes
 npm run watch
-```
 
-### Package Extension
-```bash
+# Package the extension
 npm run package
 ```
 
-This will create a `vocalise-vscode-0.1.0.vsix` file that can be installed.
+### Reporting Issues
 
-## Roadmap
-
-- [ ] Improved AI chat detection for specific providers
-- [ ] Custom voice selection UI
-- [ ] Reading entire chat threads
-- [ ] Skip code blocks option
-- [ ] Keyboard shortcuts for different voices
-- [ ] Reading history
-- [ ] Web Speech API alternatives for better voice quality
+If you find a bug or have a feature request, please open an issue on GitHub:
+https://github.com/YOUR_USERNAME/vocalise-vscode/issues
 
 ## License
 
-ISC
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## GitHub Repository
+
+This project is open source! Check out the repository:
+https://github.com/YOUR_USERNAME/vocalise-vscode
 
 ## Author
 
