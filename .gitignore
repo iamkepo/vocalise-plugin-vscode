@@ -1,0 +1,4 @@
+node_modules/
+.vscode/
+out/
+vocalise-vscode-0.1.0.vsix

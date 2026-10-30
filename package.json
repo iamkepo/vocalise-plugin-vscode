@@ -1,0 +1,143 @@
+{
+  "name": "vocalise-vscode",
+  "displayName": "Vocalise - Text to Speech for AI Chat",
+  "description": "Read AI chat responses from Devin and Copilot aloud with Web Speech API",
+  "version": "0.1.0",
+  "publisher": "vocalise",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "text-to-speech",
+    "tts",
+    "speech",
+    "ai",
+    "copilot",
+    "chat",
+    "accessibility"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vocalise.readSelection",
+        "title": "Read Selection Aloud",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.readClipboard",
+        "title": "Read Clipboard Aloud",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.readFile",
+        "title": "Read File Aloud",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.stopReading",
+        "title": "Stop Reading",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.togglePause",
+        "title": "Pause/Resume Reading",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.readChatMessage",
+        "title": "Read AI Chat Message",
+        "category": "Vocalise",
+        "enablement": "false"
+      },
+      {
+        "command": "vocalise.openSettings",
+        "title": "Open Vocalise Settings",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.startMcpServer",
+        "title": "Start Vocalise MCP Server",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.stopMcpServer",
+        "title": "Stop Vocalise MCP Server",
+        "category": "Vocalise"
+      },
+      {
+        "command": "vocalise.toggleMcpServer",
+        "title": "Toggle Vocalise MCP Server",
+        "category": "Vocalise"
+      }
+    ],
+    "keybindings": [],
+    "configuration": {
+      "title": "Vocalise",
+      "properties": {
+        "vocalise.voiceName": {
+          "type": "string",
+          "default": "",
+          "description": "Name of the voice to use for speech synthesis"
+        },
+        "vocalise.rate": {
+          "type": "number",
+          "default": 1.0,
+          "minimum": 0.5,
+          "maximum": 2.0,
+          "description": "Speech rate (0.5 = slow, 1.0 = normal, 2.0 = fast)"
+        },
+        "vocalise.language": {
+          "type": "string",
+          "default": "auto",
+          "enum": ["auto", "en-US", "fr-FR", "es-ES", "de-DE", "zh-CN", "ja-JP", "ko-KR"],
+          "description": "Language for speech synthesis"
+        },
+        "vocalise.highlightText": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight the currently spoken word"
+        },
+        "vocalise.autoDetectLanguage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically detect language from text"
+        }
+      }
+    },
+    "statusBar": [
+      {
+        "id": "vocalise.status",
+        "name": "Vocalise Status",
+        "alignment": "right",
+        "text": "$(mouth) Vocalise",
+        "tooltip": "Vocalise Text-to-Speech",
+        "command": "vocalise.openSettings"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
